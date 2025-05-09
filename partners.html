@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Έργο Ελλάδα 2.0</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <div class="text-end p-2">
+    <button class="btn btn-outline-secondary btn-sm" onclick="switchLang()">
+      <img id="lang-flag" src="assets/images/flag-en.png" alt="Language Switch" width="24" height="20" />
+    </button>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img id="gr20" src="" alt="Ελλάδα 2.0 Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html" id="home"></a></li>
+          <li class="nav-item"><a class="nav-link" href="partners.html" id="partners"></a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#results" id="results"></a></li> -->
+          <!-- <li class="nav-item"><a class="nav-link" href="work_packages.html" id="work_packages"></a></li> -->
+          <!-- <li class="nav-item"><a class="nav-link" href="#contact" id="contact"></a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-content">
+    <div class="container">
+      <h1 id="title" class="display-5"></h1>
+      <!-- <p id="description" class="lead"></p> -->
+    </div>
+  </header>
+  
+  <main class="container my-5">
+    <div class="row g-4">
+      <!-- Partner 1 -->
+      <div class="col-md-6 text-start">
+        <a href="https://www.uth.gr/" target="_blank"><img id="uthlogo" alt="UTH" class="img-fluid mb-3" width="340"></a>
+        <h3 id="uth"></h3>
+        <p id="uthdes"></p>
+        <a href="https://www.uth.gr/" target="_blank" class="btn btn-primary">Visit Website</a>
+      </div>
+      <!-- Partner 2 -->
+      <div class="col-md-6 text-start">
+        <a href="https://www.biomedcode.com/" target="_blank"><img src="assets/images/biomedcode.png" alt="biomedcode" class="img-fluid mb-3" width="340"></a>
+        <h3 id="biomedcode"></h3>
+        <p id="biomedcodedes"></p>
+        <a href="https://www.biomedcode.com/" target="_blank" class="btn btn-primary">Visit Website</a>
+      </div>
+      <!-- Partner 3 -->
+      <div class="col-md-6 text-start">
+        <a href="https://www.fleming.gr/" target="_blank"><img src="assets/images/fleming.png" alt="Fleming" class="img-fluid mb-3" width="340"></a>
+        <h3 id="fleming"></h3>
+        <p id="flemingdes"></p>
+        <a href="https://www.fleming.gr/" target="_blank" class="btn btn-primary">Visit Website</a>
+      </div>
+      <!-- Partner 4 -->
+      <div class="col-md-6 text-start">
+        <a href="https://med.uoi.gr/" target="_blank"><img id="uoilogo" alt="UOI" class="img-fluid mb-3" width="340"></a>
+        <h3 id="uoi"></h3>
+        <p id="uoides"></p>
+        <a href="https://med.uoi.gr/" target="_blank" class="btn btn-primary">Visit Website</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <!-- Developer Info -->
+        <div class="col-md-6 d-flex flex-column align-items-center text-md-start">
+          <img src="assets/images/cropped-Intelligent-Systems-Laboratory-Yellow-1.png" alt="ISL Lab Logo" width="180" class="mb-2">
+          <p>Developed by the <a href="https://isl.dib.uth.gr/" target="_blank">ISL Lab</a>. Developer <a href="https://github.com/panagiotisanagnostou" target="_blank">Panagiotis Anagnostou</a>.</p>        </div>
+        <!-- Copyright Info -->
+        <div class="col-md-6 d-flex flex-column align-items-center text-md-left">
+          <img src="assets/images/visual_identity.jpg" alt="EU Flag" width="370" class="mb-2">
+          <p>&copy; 2025 | <span id="copywrite_text"></span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+
+  <script>
+    let currentLang = navigator.language.startsWith("el") ? "en" : "el";
+    let strings = {
+      "el": {
+        "languageSwitch": "English",
+        "pagetitle": "Έργο BioOnChip",
+        "home": "Αρχική Σελίδα",
+        "partners": "Έταιροι",
+        "results": "Αποτελέσματα",
+        "work_packages": "Πακέτα Εργασίας",
+        "contact": "Επικοινωνία",
+        "title": "BioOnChip: Δημιουργία πλατφόρμαςβρογχοσκοπικών βιοψιών-σε-τσιπ για την πρόβλεψη της απόκρισης ασθενών με καρκίνο του πνεύμονα στην ανοσοθεραπεία. (ΤΑΕΔΚ-06185)",
+        "description": "Περιγραφή του έργου",
+        "descriptiontext": "<div class='col'> <p> Μονοθεραπεία πρώτης γραμμής με ανοσολογικούς αναστολείς σημείων ελέγχου (αντι-PD1/PDL1) συνιστάται για ασθενείς με προχωρημένο μη-μικροκυτταρικό καρκίνο του πνεύμονα (ΜΜΚΠ), χωρίς στοχευόμενες ογκογενετικές μεταλλάξεις (driver mutations) και με έκφραση του υποδοχέα PDL1 σε ποσοστό μεγαλύτερο του 50% των κυττάρων. Ωστόσο, αρκετοί ασθενείς, δεν αποκρίνονται στη θεραπεία ή αναπτύσσουν αντίσταση μετά την αρχική θετική απόκριση. Συνεπώς, υπάρχει άμεση ανάγκη διαχωρισμού των ασθενών που θα επωφεληθούν από την αντι-PD1 μονοθεραπεία ή θα χρειαστούν πιο επιθετικές συνδυαστικές θεραπείες. </p> <p> Η ανάπτυξη τρισδιάστατων (3D) πρωτογενών δυναμικών κυτταροκαλλιεργειών μικρο-ροής (microfluidic chip) μπορεί να επιτρέψει την απεικόνιση της δυναμικής αλληλεπίδρασης των κυττάρων του όγκου με κύτταρα του ανοσοποιητικού, να αναδείξει εξειδικευμένους βιοδείκτες και να συμβάλλει στην επιλογή της κατάλληλης θεραπείας (ιατρική ακριβείας) μέσω αντίστροφης μετάφρασης. Πράγματι, πρόσφατες μελέτες έδειξαν ότι δυναμικές καλλιέργειες μικρο-ροής μελανώματος που εκτίθενται σε αντι-PD1 παράγουν επίπεδα των χημειοκινών CCL19 και CXCL13 που μπορούν να συσχετιστούν θετικά με τις κλινικές αποκρίσεις των ασθενών στο ίδιο φάρμακο. Η εφαρμογή παρόμοιων προσεγγίσεων στον καρκίνο του πνεύμονα, παραμένει ανοιχτό πεδίο. </p> <p> Σκοπός του BioOnChip είναι να εξετάσει τις δυνατότητες εφαρμογής της καινοτόμου τρισδιάστατης δυναμικής καλλιέργειας καρκινικού ιστού, που είναι γνωστή ως tumor-on-chip, στην πρόβλεψη σε πραγματικό χρόνο την απόκριση ασθενών με ΜΜΚΠ σε θεραπεία με αντι-PD1. </p> <p> Οι βρογχοσκοπικές βιοψίες όγκων είναι ελάχιστα παρεμβατικές, λαμβάνονται σχεδόν από όλους τους ασθενείς με ΜΜΚΠ και επομένως είναι ιδανικές για την χρήση τους σε πλατφόρμες επιλογής φαρμάκων. Στόχος του προγράμματος είναι η ανάπτυξη των πρώτων, παγκοσμίως, καλλιεργειών βρογχοσκοπικών βιοψιών σε chip (BioOnChip). </p> <p> Σε αυτό το πλαίσιο θα οργανωθεί μια κλινική μελέτη που θα εξετάζει παράλληλα την κλινική απόκριση ασθενών με ΜΜΚΠ προχωρημένου σταδίου στην αντι-PD1 μονοθεραπεία και την αντίδραση των bronchoBOCs τους στην έκθεση στο αντι-PD1. Οι αποκρίσεις των bronchoBOC στην αντι-PD1 θεραπεία θα χαρακτηρισθούν με χρήση τεχνολογιών αιχμής που συνδυάζουν φασματομετρία μάζας (LC-MS/MS), κυτταρομετρία ροής (FACS), πολυπλεκτικές πλατφόρμες ανοσοεντοπισμού πρωτεϊνών (CBA, cytometric bead arrays), καθώς και απεικονιστικές τεχνικές. </p> <p> Μέθοδοι <strong>Τεχνητής Νοημοσύνης</strong> και <strong>Μηχανικής Μάθησης</strong> θα εφαρμοστούν ώστε να συσχετιστούν τα μοριακά δεδομένα των BioOnChip με την κλινική απόκριση των ασθενών με σκοπό να γίνει πρόγνωση βιοδεικτών με μεγαλύτερη ακρίβεια, ενώ θα αναπτυχθούν απλοϊκοί αλγόριθμοι που θα μπορούν να εφαρμοστούν σε δεδομένα μεγάλου όγκου ώστε να προβλέψουν την ανταπόκριση στη θεραπεία με ικανοποιητικό ποσοστό επιτυχίας. </p> <p> Τα τελικά προϊόντα αυτού του προγράμματος θα είναι: <ol> <li>μια τυποποιημένη προκλινική πλατφόρμα για διαλογή φαρμάκων,</li> <li>μελέτη των κοινωνικοοικονομικών επιπτώσεων (Health Technology Assessment) της νέας τεχνολογίας,</li> <li>ένας φιλικός προς τον χρήστη αλγόριθμος κλινικής πρόβλεψης και μια ηλεκτρονική πύλη,</li> <li>η πρώτη ελληνική spin-out εταιρεία που προσφέρει πλατφόρμες όγκου σε τσιπ για τη διαλογή φαρμάκων στη φαρμακευτική βιομηχανία.</li> </ol> </p> </div>",
+        "beneficiaryText": "Όνομα Φορέα / Οργανισμού",
+        "implementingBody": "Φορέας Υλοποίησης",
+        "implementingBodyText": "Ειδική Υπηρεσία Διαχείρισης και Εφαρμογής Δράσεων στους τομείς Έρευνας και Καινοτομίας",
+        "budget": "Προϋπολογισμός Έργου",
+        "budgetText": "1.200.000 €",
+        "euFunding": "Χρηματοδότηση ΕΕ",
+        "euFundingText": "728.475,22 € από το Ταμείο Ανάκαμψης και Ανθεκτικότητας",
+        "fundingNote": "Το έργο υλοποιείται στο πλαίσιο του Εθνικού Σχεδίου Ανάκαμψης και Ανθεκτικότητας «Ελλάδα 2.0», με τη χρηματοδότηση της Ευρωπαϊκής Ένωσης – NextGenerationEU (Φορέας Υλοποίησης: ΕΥΔΕ ΕΚ).",
+        "copyright": "Όλα τα δικαιώματα διατηρούνται.",
+        "uth": "Πανεπιστήμιο Θεσσαλίας",
+        "uthdes": "Το Πανεπιστήμιο Θεσσαλίας συγκαταλέγεται ανάμεσα στα 5 καλύτερα Ελληνικά ΑΕΙ. Σύμφωνα με το Εθνικό Κέντρο Τεκμηρίωσης, το Πανεπιστήμιο Θεσσαλίας ανήκει στους 10 ελληνικούς φορείς που έχουν επιτύχει τη μεγαλύτερη κοινοτική χρηματοδότηση μέχρι σήμερα στον Ορίζοντα 2020. Πιο συγκεκριμένα, το Πανεπιστήμιο Θεσσαλίας υλοποιεί 25 συνεργατικά ερευνητικά προγράμματα εκ των οποίων τα 5 ως συντονιστής με κοινοτική χρηματοδότηση σχεδόν 7 εκατ. Ευρώ. Το Τμήμα Πληροφορικής με Εφαρμογές στη Βιοϊατρική (www.dib.uth.gr) λειτουργεί από το ακαδημαϊκό έτος 2004-2005. Είναι ένα τμήμα πρωτοποριακό στον τομέα των Εφαρμοσμένων Επιστημών επειδή καλύπτει ένα ευρύ φάσμα, τόσο στον τομέα της Πληροφορικής όσο και στον τομέα της Βιοϊατρικής. Το Τμήμα παρέχει στους φοιτητές γνώσεις Πληροφορικής αλλά και μία παράλληλη εξειδίκευση, που περιλαμβάνει την αξιοποίηση των Πληροφοριακών Συστημάτων στο χώρο της Ιατρικής Τεχνολογίας καθώς και της έρευνας στη Βιοϊατρική Τεχνολογία και Βιοπληροφορική. Ένα από τα εργαστήρια που διαθέτει το Τμήμα είναι το Εργαστήριο «Ευφυών Υπολογιστικών Συστημάτων (ΕΥΣ)», το οποίο ασχολείται με την ανάπτυξη υπολογιστικών μοντέλων και την αποτελεσματική υλοποίηση τους, στοχεύοντας στην ανακάλυψη γνώσης, την παραγωγή συμπερασμάτων και την ανάκτηση πληροφορίας. Ο κορμός της έρευνάς του ΕΥΣ βρίσκεται στην τομή των επιστημονικών περιοχών της Πληροφορικής, των Μαθηματικών και της Στατιστικής, και επικεντρώνεται σε εφαρμογές στην ιατρική, στη βιομηχανία, στις κοινωνικές επιστήμες, και στην οικονομία.",
+        "biomedcode": "Biomedcode",
+        "biomedcodedes": "H Biomedcode Hellas Α.Ε. παρέχει υπηρεσίες προκλινικής αξιολόγησης φαρμάκων στη διεθνή φαρμακοβιομηχανία, χρησιμοποιώντας μια μοναδική συλλογή ζωικών μοντέλων χρόνιων φλεγμονωδών ασθενειών του ανθρώπου. Η εταιρίαιδρύθηκε το 2006 ως τεχνοβλαστός του Ερευνητικού Κέντρου  Βιοϊατρικών Επιστημών 'Αλέξανδρος Φλέμιγκ' επενδύοντας στην μακρά εμπειρία και τεχνοχνωσία των μετόχων της και του επιστημονικού της προσωπικού στη δημιουργία και τη μελέτη διαγονιδιακών ποντικών που προσομοιάζουν ασθένειες του ανθρώπου, όπως η ρευματοειδής αρθρίτιδα, η οστεοπόρωση, η ψωρίαση, η φλεγμονώδης νόσος του εντέρου, η σκλήρυνση κατά πλάκας και άλλες.",
+        "uoi": "Πανεπιστήμιο Ιωαννίνων",
+        "uoides": "Στο Πανεπιστήμιο Ιωαννίνων πραγματοποιείται έρευνα  (βασική και εφαρμοσμένη) καθώς και πειραματική ανάπτυξη  σε όλους τους τομείς και τα γνωστικά αντικείμενα που  καλύπτονται από τα Τμήματα και τις Σχολές του Ιδρύματος.  Ιδιαίτερη έμφαση δίνεται σε διεπιστημονικά προγράμματα  εφαρμοσμένης έρευνας και πειραματικής ανάπτυξης που  ενδιαφέρουν τη βιομηχανία, οικονομία και κοινωνία, τόσο σε  εθνικό, όσο και σε περιφερειακό επίπεδο. Η έρευνα  χρηματοδοτείται κατά κύριο λόγο από τα Κοινοτικά Πλαίσια  Στήριξης (Α’, Β’, Γ’ ΚΠΣ, ΕΣΠΑ 2007-2013, ΕΣΠΑ 2014-  2020) μέσω των διαφόρων Επιχειρησιακών του  Προγραμμάτων, από τα Προγράμματα Εδαφικής  Συνεργασίας (INTERREG), από την Ευρωπαϊκή Επιτροπή  (FP6, FP7, ΗORIZON 2020 κλπ), καθώς επίσης και από τον  ιδιωτικό τομέα.  Επίσης, πολλά ερευνητικά προγράμματα διεξάγονται στο  πλαίσιο διακρατικών συνεργασιών μεταξύ ερευνητικών  ομάδων του Πανεπιστημίου Ιωαννίνων και αντίστοιχων  ομάδων ιδρυμάτων, επιχειρήσεων και οργανισμών άλλων  χωρών, τόσο εντός όσο και εκτός της Ευρωπαϊκής Ένωσης  (ΗΠΑ, ΚΙΝΑ, ΡΩΣΙΑ, ΙΣΡΑΗΛ, ΤΟΥΡΚΙΑ, κλπ).  Η Πνευμονολογική Κλινική του Πανεπιστημίου Ιωαννίνων  νοσηλεύει ασθενείς με όλο το φάσμα των παθήσεων του  αναπνευστικού, συμπεριλαμβανομένου και του καρκίνου  του πνεύμονα. Διαθέτει βρογχοσκοπικό εργαστήριο, το  οποίο σύντομα θα διαθέτει και σύστημα ενδοβρογχικής  υπερηχογραφίας (endobronchial ultrasound, EBUS), καθώς  και πλήρες εργαστήριο λειτουργικού ελέγχου του  αναπνευστικού. Εκτελεί σε εβδομαδιαία βάση ειδικά ιατρεία  Σοβαρού Άσθματος, ΧΑΠ, Αντιφυματικό, Διαμέσων  Νοσημάτων και Διαταραχών Αναπνοής στον Ύπνο. Διαθέτει  υποδομή για τη διεξαγωγή παρεμβατικών μελετών,  συμπεριλαμβανομένης και εξειδικευμένης νοσηλεύτριας.",
+        "fleming": "Ερευνητικό Κέντρο Βιοϊατρικών Επιστημών 'Αλέξανδρος Φλέμιγκ'",
+        "flemingdes": "Το Ερευνητικό Κέντρο Βιοϊατρικών Επιστημών 'Αλέξανδρος Φλέμιγκ' ιδρύθηκε το 1998 και είναι ένας από τους 10 Ερευνητικούς φορείς που εποπτεύονται από την Γενική Γραμματείας Έρευνας και Τεχνολογίας. Το Κέντρο εστιάζε στην επιστημονική και τεχνολογική αριστεία, την εκπαίδευση και την καινοτομία στις βιοϊατρικές επιστήμες, και παρουσιάζει κορυφαίες επιδόσεις, επιτυγχάνοντας διεθνώς ανταγωνιστικά επίπεδα βασικών δεικτών ακαδημαϊκής και ερευνητικής αριστείας. Το Κέντρο έχει αποκτήσει διεθνή αναγνώριση για τις πρωτοποριακές του έρευνες στην κατανόηση της μοριακής και κυτταρικής βάσης ασθενειών όπως τα αυτοάνοσα νοσήματα, ο καρκίνος, οι νευροεκφυλιστικές νόσοι, η οστεοπόρωση, η πνευμονική ίνωση κ.α., και στην ανάπτυξη νέων προσεγγίσεων για την αντιμετώπισή τους. Το Φλέμιγκ φιλοξενεί σήμερα 16 ιδιαίτερα ανταγωνιστικές ερευνητικές ομάδες που δραστηριοποιούνται στη λειτουργική γονιδιωματική και πρωτεομική, τη μοριακή και κυτταρική ανοσολογία, την ανάπτυξη ζωικών προτύπων των ασθενειών του ανθρώπου, τη μελέτη των μεταγραφικών και μετα-μεταγραφικών μηχανισμών γονιδιακών ρυθμίσεων, την επιγενετική, την επιδιόρθωση βλαβών του DNA, τους μηχανισμούς μάθησης και μνήμης, και τη βιολογία του εξωκυττάριου χώρου (ECM). Το Κέντρο είναι διεθνώς αναγνωρισμένο για τις έρευνές του στον τομέα της μεταφραστικής έρευνας και την ανακάλυψη σηματοδοτικών μονοπατιών, βιοδεικτών και στόχων, την προκλινική αξιολόγηση φαρμάκων σε ζωικά μοντέλα και την ανακάλυψη νέων θεραπευτικών προσεγγίσεων, και επενδύει ενεργά στην ανάπτυξη των σχετικών υποδομών."
+      },
+      "en": {
+        "languageSwitch": "Ελληνικά",
+        "pagetitle": "BioOnChip Project",
+        "home": "Home",
+        "partners": "Partners",
+        "results": "Results",
+        "work_packages": "Work Packages",
+        "contact": "Contact",
+        "title": "BioOnChip: Development of a bronchoscopic biopsies-on-chip platform for immunotherapy drug screening in non-small cell lung cancer. (TAEDK-06185)",
+        "description": "Project description",
+        "descriptiontext": "<div class='col'> <p> Monotherapy with anti-PD-1 is indicated as first-line therapy in patients with advanced non-small-cell lung cancer (NSCLC) that carry non-targetable driver mutations and higher than 50% PDL1 expression. Still, many patients do not respond or become resistant after they exhibit an initial response. Identifying patients who will benefit from anti-PD-1 monotherapy or that require a more aggressive combination therapy is an unmet need. </p> <p> Three-dimensional primary microfluidic cultures may capture the dynamic tumor-immune interplay and provide insights on optimal treatment through <strong>reverse translation</strong>. Indeed, recent studies have shown that the release of CCL19 and CXCL13 in melanoma-derived microfluidic cultures correlates with clinical responses and it remains to be seen whether and how similar approaches may be applied to other types of cancer such as lung cancer. </p> <p> The aim of this project is to interrogate the applicability of an innovative <strong>3D microfluidic microculture</strong>, i.e. <strong>tumor-on-chip</strong>, in predicting real-time responses to PD1-blockade in NSCLC patients. </p> <p> Bronchoscopic tumor biopsies are minimally invasive and are routinely obtained from advanced NSCLC patients, therefore they are ideal samples to be used for personalized drug screening purposes. We will develop and validate the first <strong>bronchoscopic biopsies-on-chip (BioOnChip)</strong> and we will conduct a prospective <strong>co-clinical trial</strong> by studying in parallel clinical responses (overall survival and progression-free survival) to a-PD1 monotherapy in treatment-naive advanced NSCLC patients (n=36) matched to their <strong>bronchoBOCs</strong>. </p> <p> The responses of bronchoBOC to a-PD1 therapy will be profiled through proteome analysis using <strong>mass spectrometry (LC-MS/MS)</strong>, <strong>FACS</strong> and <strong>cytometric bead arrays</strong>, accompanied by <strong>immunofluorescence imaging</strong>. </p> <p> <strong>Artificial intelligence/machine learning</strong> approaches will be applied to BioOnChip profiles and clinical data, to identify the optimal predictive biomarker patterns to a-PD1 therapy. We will develop easy <strong>bioinformatics algorithms</strong> that can predict response to therapy. </p> <p> The final products of this project will be: <ol> <li>A standardized pre-clinical platform for drug screening,</li> <li>A <strong>Health Technology Assessment</strong> of its socioeconomic impact,</li> <li>A user-friendly clinical prediction algorithm and online portal,</li> <li>The first Greek <strong>spin-out company</strong> that offers tumor-on-chip platforms for drug screening to the pharma industry.</li> </ol> </p> </div>",
+        "beneficiary": "Beneficiary",
+        "beneficiaryText": "Organization Name",
+        "implementingBody": "Implementing Body",
+        "implementingBodyText": "Special Service for the Management and Implementation of R&D Actions",
+        "budget": "Project Budget",
+        "budgetText": "€1,200,000",
+        "euFunding": "EU Funding",
+        "euFundingText": "€728,475.22 from the Recovery and Resilience Facility",
+        "fundingNote": "This project is implemented under the National Recovery and Resilience Plan “Greece 2.0”, with funding from the European Union – NextGenerationEU (Implementing Body: E.Y.D.E. E.K.).",
+        "copyright": "All rights reserved.",
+        "uth": "University of Thessaly",
+        "uthdes": "The University of Thessaly is ranked among the top 5 Greek Higher Education Institutions. According to the National Documentation Centre, the University of Thessaly is among the 10 Greek institutions that have secured the highest EU funding to date under Horizon 2020. Specifically, the University of Thessaly is implementing 25 collaborative research projects, 5 of which it is coordinating, with nearly 7 million euros in EU funding. The Department of Computer Science and Biomedical Informatics (www.dib.uth.gr) has been operating since the academic year 2004–2005. It is a pioneering department in the field of Applied Sciences as it covers a broad spectrum of both Computer Science and Biomedical fields. The Department provides students with knowledge in Computer Science along with a parallel specialization, which includes the application of Information Systems in the field of Medical Technology, as well as research in Biomedical Technology and Bioinformatics. One of the Department’s laboratories is the 'Intelligent Systems Laboratory' (ISL), which focuses on the development of computational models and their effective implementation, aiming at knowledge discovery, inference generation, and information retrieval. The core of ISL research lies at the intersection of Computer Science, Mathematics, and Statistics, with applications in medicine, industry, social sciences, and economics.",
+        "biomedcode": "Biomedcode",
+        "biomedcodedes": "Biomedcode Hellas S.A. provides preclinical drug evaluation services to the international pharmaceutical industry, using a unique collection of animal models of chronic human inflammatory diseases. The company was founded in 2006 as a spin-off of the Biomedical Sciences Research Center “Alexander Fleming,” capitalizing on the extensive experience and expertise of its shareholders and scientific staff in the development and study of transgenic mice that simulate human diseases such as rheumatoid arthritis, osteoporosis, psoriasis, inflammatory bowel disease, multiple sclerosis, and others.",
+        "uoi": "University of Ioannina",
+        "uoides": "At the University of Ioannina, research (both basic and applied) as well as experimental development is conducted in all fields and disciplines covered by the University’s Departments and Schools. Special emphasis is placed on interdisciplinary applied research and experimental development that interests industry, economy, and society, both at the national and regional levels. Research is primarily funded by the Community Support Frameworks (1st, 2nd, 3rd CSF, NSRF 2007-2013, NSRF 2014-2020) through its various Operational Programs, from Territorial Cooperation Programs (INTERREG), from the European Commission (FP6, FP7, HORIZON 2020, etc.), as well as from the private sector. Additionally, many research programs are conducted within the framework of international collaborations between research teams from the University of Ioannina and corresponding teams from institutions, companies, and organizations in other countries, both within and outside the European Union (USA, CHINA, RUSSIA, IS RAEL, TURKEY, etc.). The Pulmonary Clinic of the University of Ioannina admits patients with the full spectrum of respiratory diseases, including lung cancer. It has a bronchoscopy laboratory, which will soon have an endobronchial ultrasound (EBUS) system, as well as a complete laboratory for functional respiratory testing. It conducts specialized outpatient clinics for Severe Asthma, COPD, Anti-tuberculosis, Interstitial Diseases, and Sleep Apnea Disorders on a weekly basis. It has the infrastructure to conduct interventional studies, including a specialized nurse.",
+        "fleming": "Biomedical Sciences Research Center 'Alexander Fleming'",
+        "flemingdes": "The Biomedical Sciences Research Center 'Alexander Fleming' was established in 1998 and is one of the 10 Research Centers supervised by the General Secretariat for Research and Technology. The Center focuses on scientific and technological excellence, education, and innovation in biomedical sciences, and has achieved top performance, reaching internationally competitive levels of basic academic and research excellence. The Center has gained international recognition for its pioneering research in understanding the molecular and cellular basis of diseases such as autoimmune diseases, cancer, neurodegenerative diseases, osteoporosis, pulmonary fibrosis, etc., and in developing new approaches for their treatment. Fleming currently hosts 16 highly competitive research teams that are active in functional genomics and proteomics, molecular and cellular immunology, the development of animal models of human diseases, the study of transcriptional and post-transcriptional gene regulation mechanisms, epigenetics, DNA damage repair mechanisms, learning and memory mechanisms, and extracellular matrix (ECM) biology. The Center is internationally recognized for its research in translational research and the discovery of signaling pathways, biomarkers, and targets, preclinical drug evaluation in animal models, and the discovery of new therapeutic approaches, and actively invests in developing related infrastructures."
+      }
+    };
+
+    function applyStrings() {
+      const s = strings[currentLang];
+      document.title = s.pagetitle;
+      document.getElementById("lang-flag").src = currentLang === "el" ? "assets/images/flag-en.png" : "assets/images/flag-gr.png";
+      document.getElementById("gr20").src = currentLang === "el" ?  "assets/images/Greece2.0-gr-scaled.jpg" : "assets/images/Greece2.0-en-scaled.jpg";
+      document.getElementById("home").textContent = s.home;
+      document.getElementById("partners").textContent = s.partners;
+      // document.getElementById("work_packages").textContent = s.work_packages;
+      document.getElementById("title").textContent = s.title;
+      document.getElementById("uthlogo").src = currentLang === "el" ?  "assets/images/uth_gr.png" : "assets/images/uth_en.png";
+      document.getElementById("uth").textContent = s.uth;
+      document.getElementById("uthdes").textContent = s.uthdes;
+      document.getElementById("biomedcode").textContent = s.biomedcode;
+      document.getElementById("biomedcodedes").textContent = s.biomedcodedes;
+      document.getElementById("fleming").textContent = s.fleming;
+      document.getElementById("flemingdes").textContent = s.flemingdes;
+      document.getElementById("uoilogo").src = currentLang === "el" ?  "assets/images/uoi_gr.gif" : "assets/images/uoi_en.gif";
+      document.getElementById("uoi").textContent = s.uoi;
+      document.getElementById("uoides").textContent = s.uoides;
+      document.getElementById("copywrite_text").textContent = s.copyright;
+    }
+
+    function switchLang() {
+      currentLang = currentLang === "el" ? "en" : "el";
+      applyStrings();
+    }
+    
+    applyStrings();
+    
+    // fetch("strings.json")
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     strings = data;
+    //     applyStrings();
+    //   });
+  </script>
+
+</body>
+</html>
